@@ -80,6 +80,12 @@
 			"@composer scenario symfony4",
 			"mkdir -p vendor/symfony/polyfill-php70/Resources/stubs",
 			"@test"
+		],
+
+		"test5": [
+			"@composer scenario symfony5",
+			"mkdir -p vendor/symfony/polyfill-php70/Resources/stubs",
+			"@test"
 		]
 	},
 	"extra": {
@@ -119,6 +125,19 @@
                         "php": "7.1.3"
                     }
                 }
+			},
+			"symfony5": {
+				"scenario-options": {
+					"create-lockfile": "false"
+				},
+				"require": {
+					"symfony/dependency-injection": "^5.0"
+				},
+				"config": {
+					"platform": {
+						"php": "7.4.0"
+					}
+				}
 			}
 		}
 	}
