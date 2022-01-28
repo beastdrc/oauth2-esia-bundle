@@ -65,6 +65,8 @@ services:
             - '%ekapusta_oauth2_esia.http_client.log_level%'
             - '@ekapusta_oauth2_esia.http_client.handler'
 
+    Ekapusta\OAuth2Esia\Provider\EsiaProvider:
+        alias: ekapusta_oauth2_esia.provider
     ekapusta_oauth2_esia.provider:
         class: Ekapusta\OAuth2Esia\Provider\EsiaProvider
         arguments:
@@ -80,6 +82,9 @@ services:
                 httpClient: '@ekapusta_oauth2_esia.http_client'
 
     # Simplified facade with three methods
+    Ekapusta\OAuth2Esia\EsiaService:
+        alias: ekapusta_oauth2_esia.service
+
     ekapusta_oauth2_esia.service:
         class: Ekapusta\OAuth2Esia\EsiaService
         arguments:
