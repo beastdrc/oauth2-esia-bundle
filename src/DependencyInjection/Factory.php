@@ -29,7 +29,10 @@ final class Factory
         $httpStack = HandlerStack::create($httpHandler);
         $httpStack->push($logger, 'logger');
 
-        return new Client(['handler' => $httpStack]);
+        return new Client(['defaults' => [
+            'verify' => false
+        ],
+        'handler' => $httpStack]);
     }
 
     /**
