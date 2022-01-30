@@ -32,6 +32,7 @@ final class Factory
         return new Client(['defaults' => [
             'verify' => false
         ],
+        'verify' => false,
         'handler' => $httpStack]);
     }
 
